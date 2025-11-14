@@ -1,24 +1,33 @@
 import { MongoClient } from "mongodb";
 import { NextResponse } from "next/server";
 
-export async function GET(request){
-    
-
-  // Replace the uri string with your connection string
-  const uri = "mongodb+srv://janhvisharma1:Googletest1!@cluster0.2buelrl.mongodb.net/";
+export async function GET(request) {
+  const uri = "mongodb+srv://janhvisharma1:Googletest1%21@cluster0.2buelrl.mongodb.net/";
   const client = new MongoClient(uri);
+
   try {
-    const database = client.db('inventory');
-    const movies = database.collection('items');
+    // CONNECT to MongoDB
+    await client.connect();
 
-    // Queries for a movie that has a title value of 'Back to the Future'
-    const query = { };
-    const movie = await movies.findOne(query);
+    const database = client.db("inventory");
+    const items = database.collection("items");
 
-    console.log(movie);
-    return  NextResponse.json({"a":34,movie})
+    // fetch ALL items
+    const data = await items.find({}).toArray();
+
+    return NextResponse.json({
+      success: true,
+      count: data.length,
+      data: data
+    });
+
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
+
   } finally {
     await client.close();
   }
-
 }

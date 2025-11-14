@@ -134,13 +134,7 @@ newDropdown[indexdrop].quantity=parseInt(initialQuantity) -1
                 className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-violet-400 w-90"
               />
 
-              <select className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-violet-400">
-                <option value="">All Categories</option>
-                <option value="electronics">Electronics</option>
-                <option value="clothing">Clothing</option>
-                <option value="footwear">Footwear</option>
-                <option value="accessories">Accessories</option>
-              </select>
+              
             </div>
           </h1>
           {loading && (
@@ -351,6 +345,8 @@ newDropdown[indexdrop].quantity=parseInt(initialQuantity) -1
                   <th className="px-4 py-3 border-b">Category</th>
                   <th className="px-4 py-3 border-b">Quantity</th>
                   <th className="px-4 py-3 border-b">Price (₹)</th>
+                  
+
                 
                 </tr>
               </thead>
@@ -363,51 +359,11 @@ newDropdown[indexdrop].quantity=parseInt(initialQuantity) -1
                       <td className="px-4 py-3 border-b">{product.category}</td>
                       <td className="px-4 py-3 border-b">{product.quantity}</td>
                       <td className="px-4 py-3 border-b">₹{product.price}</td>
-                      <td className="px-4 py-3 border-b text-center">
-                        
-                      </td>
+                      
                     </tr>
                   );
                 })}
-                <tr className="hover:bg-violet-200">
-                  <td className="px-4 py-3 border-b">Apple iPhone 15</td>
-                  <td className="px-4 py-3 border-b">Electronics</td>
-                  <td className="px-4 py-3 border-b">10</td>
-                  <td className="px-4 py-3 border-b">₹79,999</td>
-                  <td className="px-4 py-3 border-b text-center">
-                    
-                  </td>
-                </tr>
 
-                <tr className="hover:bg-violet-200">
-                  <td className="px-4 py-3 border-b">Nike Air Max</td>
-                  <td className="px-4 py-3 border-b">Footwear</td>
-                  <td className="px-4 py-3 border-b">25</td>
-                  <td className="px-4 py-3 border-b">₹6,499</td>
-                  <td className="px-4 py-3 border-b text-center">
-                    
-                  </td>
-                </tr>
-
-                <tr className="hover:bg-violet-200">
-                  <td className="px-4 py-3 border-b">Black Hoodie</td>
-                  <td className="px-4 py-3 border-b">Clothing</td>
-                  <td className="px-4 py-3 border-b">20</td>
-                  <td className="px-4 py-3 border-b">₹499</td>
-                  <td className="px-4 py-3 border-b text-center">
-                    
-                  </td>
-                </tr>
-
-                <tr className="hover:bg-violet-200">
-                  <td className="px-4 py-3 border-b">Wrist Watch</td>
-                  <td className="px-4 py-3 border-b">Accessories</td>
-                  <td className="px-4 py-3 border-b">15</td>
-                  <td className="px-4 py-3 border-b">₹1,500</td>
-                  <td className="px-4 py-3 border-b text-center">
-                    
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
